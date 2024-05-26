@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -13,6 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: fadeIn 2s ease-in-out;
 }
 
 header nav ul {
@@ -24,6 +26,11 @@ header nav ul {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6347;
 }
 
 #hero {
@@ -31,6 +38,7 @@ header nav ul li a {
     color: #fff;
     text-align: center;
     padding: 5rem 1rem;
+    animation: slideIn 2s ease-in-out;
 }
 
 #about, #services, #testimonials, #contact {
@@ -42,6 +50,7 @@ header nav ul li a {
     background: #f4f4f4;
     margin: 1rem 0;
     padding: 1rem;
+    animation: fadeUp 1.5s ease-in-out;
 }
 
 footer {
@@ -49,6 +58,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
+    animation: fadeIn 2s ease-in-out;
 }
 
 button {
@@ -57,4 +67,33 @@ button {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff6347;
+}
+
+input, textarea {
+    transition: transform 0.2s;
+}
+
+input:focus, textarea:focus {
+    transform: scale(1.05);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
